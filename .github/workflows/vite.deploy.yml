@@ -18,11 +18,11 @@ jobs:
     steps:
       # 1. Ambil kode repositori
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # <-- DIPERBARUI ke v4
 
       # 2. Siapkan Node.js
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # <-- DIPERBARUI ke v4
         with:
           node-version: 18 # Gunakan Node.js versi 18 (atau 20)
           cache: "npm"
@@ -37,9 +37,9 @@ jobs:
 
       # 5. Siapkan artifact untuk deploy
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5 # <-- DIPERBARUI ke v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3 # <-- DIPERBARUI ke v3 (INI KUNCINYA)
         with:
           path: "./dist" # Folder 'dist' adalah hasil build Vite
 
@@ -53,4 +53,4 @@ jobs:
       # 6. Deploy ke GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4 # <-- DIPERBARUI ke v4

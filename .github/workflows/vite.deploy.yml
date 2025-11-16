@@ -1,0 +1,56 @@
+# Nama workflow
+name: Deploy Vite Project to GitHub Pages
+
+# Pemicu: Jalankan saat ada 'push' ke branch 'main'
+on:
+  push:
+    branches: [main] # Ganti 'main' jika nama branch Anda beda
+
+# Izin untuk 'Actions' agar bisa deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Ambil kode repositori
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. Siapkan Node.js
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Gunakan Node.js versi 18 (atau 20)
+          cache: "npm"
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Build proyek (Vite akan menggunakan 'base: "/"' dari config)
+      - name: Build
+        run: npm run build
+
+      # 5. Siapkan artifact untuk deploy
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "./dist" # Folder 'dist' adalah hasil build Vite
+
+  deploy:
+    needs: build # Jalankan 'deploy' HANYA JIKA 'build' sukses
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # 6. Deploy ke GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3

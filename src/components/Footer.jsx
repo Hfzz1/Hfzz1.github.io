@@ -7,7 +7,7 @@ const Footer = () => {
         Portfolio Hafidz
       </h1>
       <div className="flex justify-between">
-        <a href="https://github.com/Hfzz1">
+        <a href="https://github.com/hfzhfz6">
           <i className="ri-github-fill ri-2x"></i>
         </a>
         <a href="https://wa.me/08126789883">

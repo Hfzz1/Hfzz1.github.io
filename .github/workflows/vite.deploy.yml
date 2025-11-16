@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4 # <-- DIPERBARUI ke v4
         with:
-          node-version: 18 # Gunakan Node.js versi 18 (atau 20)
+          node-version: 20 # Gunakan Node.js versi 18 (atau 20)
           cache: "npm"
 
       # 3. Install dependencies

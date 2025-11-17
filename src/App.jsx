@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import Image, { listProyek } from "../data";
 import { listTools } from "../data";
 function App() {
@@ -17,19 +18,24 @@ function App() {
           </p>
           <div className="flex items-center sm:gap-4 gap-2">
             <a
-              href="#"
+              href="public\Hafidz_Hussein_Vendra-resume.pdf"
+              download="Cv_Hafidz_Hussein.pdf"
               className="bg-violet-700 p-4 rounded-2xl hover:bg-zinc-800"
             >
               Download CV
-              <i class="ri-download-line ri-lg"></i>
+              <i class="ri-download-line ri-lg ml-2"></i>
             </a>
-            <a
-              href="#"
-              className="bg-zinc-800 p-4 rounded-2xl hover:bg-zinc-500"
+            <Link
+              to="proyek"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="bg-zinc-800 p-4 rounded-2xl hover:bg-zinc-500 cursor-pointer"
             >
               Lihat Proyek
               <i class="ri-arrow-down-line ri-lg"></i>
-            </a>
+            </Link>
           </div>
         </div>
         <img

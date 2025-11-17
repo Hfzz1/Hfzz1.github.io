@@ -65,19 +65,19 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website Ebook-Store",
+    nama: "Management SIP",
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "ReactJS", "Tailwind"],
     dad: "200",
-    website: "https://github.com/novendra27/ebook-store/tree/main",
+    website: "https://github.com/arirahman2323/management-sip",
   },
   {
     id: 2,
     gambar: Proyek2,
-    nama: "Management SIP",
+    nama: "Website Ebook-Store",
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "ReactJS", "Tailwind", "Laravel"],
     dad: "300",
-    website: "https://github.com/arirahman2323/management-sip",
+    website: "https://github.com/novendra27/ebook-store/tree/main",
   },
 ];
